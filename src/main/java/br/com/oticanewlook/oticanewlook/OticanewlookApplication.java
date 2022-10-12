@@ -1,4 +1,4 @@
-package br.com.oticanewlook.oticanewlook.model;
+package br.com.oticanewlook.oticanewlook;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
