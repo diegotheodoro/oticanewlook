@@ -5,7 +5,7 @@ body{
 .main-login{
     width: 100vw;
     height: 100vh;
-    background-color: rgb(88, 80, 80);
+    background-color: rgb(223, 211, 211);
     display: flex;
     justify-content: center;
     align-items: center;
