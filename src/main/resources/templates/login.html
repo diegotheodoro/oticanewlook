@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/login.css">
     <title>Login</title>
 </head>
+
 <body>
     <div class="main-login">
         <div class="left-login">
             <h1>Seja Bem Vindo</h1>
             <img src="LogoOtica.svg" class="left-login-image" alt="LogoOtica">
         </div>
-        <div class="right-login">
-            <div class="card-login">
-                <h1>Acesse sua Conta</h1>
-                <div class="textfield">
-                    <label for="usuario">Usuário</label>
-                    <input type="text" name="usuario" placeholder="E-mail">
+
+        <form action="/logar" method="post">
+            <div class="right-login">
+                <div class="card-login">
+                    <h1>Acesse sua Conta</h1>
+                    <div class="textfield">
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome" required="required" placeholder="nome">
+                    </div>
+                    <div class="textfield">
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" required="required" placeholder="Senha">
+                    </div>
+                    <button class="btn-login">ENTRAR</button>
+                    <div th:if="${erro != null}" th:text="${erro}" class="alert alert-danger" role="alert"></div>
                 </div>
-                <div class="textfield">
-                    <label for="senha">Senha</label>
-                    <input type="password" name="senha" placeholder="Senha">
-                </div>
-                <button class="btn-login">ENTRAR</button>
             </div>
-        </div>
+        </form>
+
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

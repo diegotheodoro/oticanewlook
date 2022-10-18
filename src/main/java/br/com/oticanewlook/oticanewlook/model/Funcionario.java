@@ -28,9 +28,12 @@ public class Funcionario {
     
     private String cel;
 
+    private String senha;
+
     private String ativo;
 
     private Date data_cadastro;
+    
 
     @PrimaryKeyJoinColumn
     @OneToOne(cascade=CascadeType.ALL)
@@ -43,7 +46,7 @@ public class Funcionario {
     public Funcionario() {
     }
 
-    public Funcionario(Long id_func, String nome, String endereco, String tel, String cel, String ativo,
+    public Funcionario(Long id_func, String nome, String endereco, String tel, String cel, String ativo, String senha,
             Date data_cadastro, Cidade id_cidade, TipoFuncionario id_tipo_func) {
         this.id_func = id_func;
         this.nome = nome;
@@ -51,6 +54,7 @@ public class Funcionario {
         this.tel = tel;
         this.cel = cel;
         this.ativo = ativo;
+        this.senha = senha;
         this.data_cadastro = data_cadastro;
         this.id_cidade = id_cidade;
         this.id_tipo_func = id_tipo_func;
@@ -104,6 +108,8 @@ public class Funcionario {
         this.ativo = ativo;
     }
 
+    
+
     public Date getData_cadastro() {
         return data_cadastro;
     }
@@ -126,6 +132,14 @@ public class Funcionario {
 
     public void setId_tipo_func(TipoFuncionario id_tipo_func) {
         this.id_tipo_func = id_tipo_func;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     
