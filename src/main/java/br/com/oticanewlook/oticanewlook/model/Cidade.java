@@ -15,7 +15,7 @@ public class Cidade {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_cidade;
+    private int id_cidade;
 
     private String nome;
 
@@ -26,17 +26,17 @@ public class Cidade {
     public Cidade() {
     }
 
-    public Cidade(Long id_cidade, String nome, Estado id_estado) {
+    public Cidade(int id_cidade, String nome, Estado id_estado) {
         this.id_cidade = id_cidade;
         this.nome = nome;
         this.id_estado = id_estado;
     }
 
-    public Long getId_cidade() {
+    public int getId_cidade() {
         return id_cidade;
     }
 
-    public void setId_cidade(Long id_cidade) {
+    public void setId_cidade(int id_cidade) {
         this.id_cidade = id_cidade;
     }
 

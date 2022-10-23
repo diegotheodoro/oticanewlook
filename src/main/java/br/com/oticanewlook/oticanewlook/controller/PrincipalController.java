@@ -10,7 +10,7 @@ public class PrincipalController {
 
     @GetMapping
     public String principal() {
-        return "principal";
+        return "principal/index";
     }
 
 }

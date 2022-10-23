@@ -18,7 +18,7 @@ public class Funcionario {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_func;
+    private int id_func;
 
     private String nome;
 
@@ -46,7 +46,7 @@ public class Funcionario {
     public Funcionario() {
     }
 
-    public Funcionario(Long id_func, String nome, String endereco, String tel, String cel, String ativo, String senha,
+    public Funcionario(int id_func, String nome, String endereco, String tel, String cel, String ativo, String senha,
             Date data_cadastro, Cidade id_cidade, TipoFuncionario id_tipo_func) {
         this.id_func = id_func;
         this.nome = nome;
@@ -60,11 +60,11 @@ public class Funcionario {
         this.id_tipo_func = id_tipo_func;
     }
 
-    public Long getId_func() {
+    public int getId_func() {
         return id_func;
     }
 
-    public void setId_func(Long id_func) {
+    public void setId_func(int id_func) {
         this.id_func = id_func;
     }
 

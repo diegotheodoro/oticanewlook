@@ -17,18 +17,19 @@ public class LoginController {
     @Autowired
     private FuncionarioRepository funcRepo;
 
-    @GetMapping("/login")
+    @GetMapping("/")
     public String login() {
-        return "login";
+        return "home/login";
     }
 
     @PostMapping("/logar")
     public String logar(Model model, Funcionario funcParam) {
         Funcionario func = this.funcRepo.Login(funcParam.getNome(), funcParam.getSenha());
         if (func != null) {
-            return "redirect:/";
+            return "redirect:/principal";
         }
         model.addAttribute("erro", "Dados incorretos ou Usuário não existe!");
-        return "login";
+        return "home/login";
     }
+    
 }

@@ -12,23 +12,23 @@ public class Estado {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_estado;
+    private int id_estado;
 
     private String nome;
 
     public Estado() {
     }
 
-    public Estado(Long id_estado, String nome) {
+    public Estado(int id_estado, String nome) {
         this.id_estado = id_estado;
         this.nome = nome;
     }
 
-    public Long getId_estado() {
+    public int getId_estado() {
         return id_estado;
     }
 
-    public void setId_estado(Long id_estado) {
+    public void setId_estado(int id_estado) {
         this.id_estado = id_estado;
     }
 

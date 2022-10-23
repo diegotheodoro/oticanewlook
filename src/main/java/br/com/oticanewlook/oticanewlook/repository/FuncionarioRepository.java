@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import br.com.oticanewlook.oticanewlook.model.Funcionario;
 
-public interface FuncionarioRepository extends JpaRepository<Funcionario, Long> {
+public interface FuncionarioRepository extends JpaRepository<Funcionario, Integer> {
     
     
 
