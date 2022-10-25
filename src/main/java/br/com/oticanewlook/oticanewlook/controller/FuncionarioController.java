@@ -28,7 +28,7 @@ public class FuncionarioController {
 
         return "generico/funcionario";
     }
-    
+
     @GetMapping("/funcionarios/novo")
     public String novo() {
 

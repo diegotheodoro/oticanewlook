@@ -41,6 +41,7 @@ body{
   font-weight: 600;
   transition: 0.3s ease;
   transition-delay: 0.1s;
+  margin: 30px;
 }
 .sidebar.close .logo-details .logo_name{
   transition-delay: 0s;
