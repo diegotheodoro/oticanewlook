@@ -20,13 +20,13 @@ public class FuncionarioController {
 
     @GetMapping("/funcionarios")
     public String funcionarios() {
-        return "cadastros/funcionario";
+        return "generico/funcionario";
     }
     
     @GetMapping("/funcionarios/novo")
     public String novo() {
 
-        return "funcionarios/novo";
+        return "cadastros/novoFunc";
     }
     
     @PostMapping("/funcionarios/criar")
