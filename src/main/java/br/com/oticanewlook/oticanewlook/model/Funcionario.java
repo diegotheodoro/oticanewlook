@@ -22,6 +22,8 @@ public class Funcionario {
 
     private String nome;
 
+    private String email;
+
     private String endereco;
 
     private String tel;
@@ -75,6 +77,15 @@ public class Funcionario {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 
     public String getEndereco() {
         return endereco;
