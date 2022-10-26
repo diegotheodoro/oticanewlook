@@ -29,7 +29,7 @@ public class LoginController {
 
     @PostMapping("/logar")
     public String logar(Model model, @Valid Funcionario funcParam, BindingResult result, RedirectAttributes a) {
-        Funcionario func = this.funcRepo.Login(funcParam.getNome(), funcParam.getSenha());
+        Funcionario func = this.funcRepo.Login(funcParam.getEmail(), funcParam.getSenha());
 
         if (func != null) {
             a.addFlashAttribute("msg", "Login realizado!");

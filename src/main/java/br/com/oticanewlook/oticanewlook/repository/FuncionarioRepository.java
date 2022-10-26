@@ -10,6 +10,6 @@ public interface FuncionarioRepository extends CrudRepository<Funcionario, Integ
     
     
 
-    @Query(value = "SELECT * FROM funcionario WHERE nome =:nome and senha =:senha", nativeQuery = true)
-    public Funcionario Login(String nome, String senha);
+    @Query(value = "SELECT * FROM funcionario WHERE email =:email and senha =:senha", nativeQuery = true)
+    public Funcionario Login(String email, String senha);
 }

@@ -14,21 +14,21 @@
 <body>
     <div class="main-login">
         <div class="left-login">
-            <h1>Seja Bem Vindo</h1>
-            <img src="Logo02.png" class="left-login-image" alt="LogoOtica">
+            <h1>Bem-vindo</h1>
+            <img src="/image/LogoOtica.svg" alt="LogoOtica">
         </div>
 
         <form action="/logar" method="post">
             <div class="right-login">
                 <div class="card-login">
-                    <h1>Acesse sua Conta</h1>
+                    <h1>Fazer login</h1>
                     <div class="textfield">
-                        <label for="nome">Nome</label>
-                        <input type="text" name="nome" required placeholder="nome">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" required placeholder="Informe seu e-mail">
                     </div>
                     <div class="textfield">
                         <label for="senha">Senha</label>
-                        <input type="password" name="senha" required placeholder="Senha">
+                        <input type="password" name="senha" required placeholder="Informe sua senha">
                     </div>
                     <button class="btn-login">ENTRAR</button>
                     <div th:if="${not #strings.isEmpty(msg)}" class="alert alert-danger" role="alert"><span th:text="${msg}"></span></div>
