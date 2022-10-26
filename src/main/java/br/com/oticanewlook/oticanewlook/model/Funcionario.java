@@ -10,7 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
-
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "funcionario")
@@ -20,16 +22,31 @@ public class Funcionario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_func;
 
+    @NotBlank(message = "Nome é obrigatório, não pode ser nulo")
+    @NotEmpty(message = "Nome é obrigatório, não pode ser nulo")
+    @NotNull(message = "Nome é obrigatório, não pode ser nulo")
     private String nome;
 
+    @NotBlank(message = "Nome é obrigatório, não pode ser nulo")
+    @NotEmpty(message = "Nome é obrigatório, não pode ser nulo")
+    @NotNull(message = "Nome é obrigatório, não pode ser nulo")
     private String email;
 
+    @NotBlank(message = "Nome é obrigatório, não pode ser nulo")
+    @NotEmpty(message = "Nome é obrigatório, não pode ser nulo")
+    @NotNull(message = "Nome é obrigatório, não pode ser nulo")
     private String endereco;
 
     private String tel;
-    
+
+    @NotBlank(message = "Nome é obrigatório, não pode ser nulo")
+    @NotEmpty(message = "Nome é obrigatório, não pode ser nulo")
+    @NotNull(message = "Nome é obrigatório, não pode ser nulo")
     private String cel;
 
+    @NotBlank(message = "Nome é obrigatório, não pode ser nulo")
+    @NotEmpty(message = "Nome é obrigatório, não pode ser nulo")
+    @NotNull(message = "Nome é obrigatório, não pode ser nulo")
     private String senha;
 
     private String ativo;

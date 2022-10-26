@@ -24,14 +24,14 @@
                     <h1>Acesse sua Conta</h1>
                     <div class="textfield">
                         <label for="nome">Nome</label>
-                        <input type="text" name="nome" required="required" placeholder="nome">
+                        <input type="text" name="nome" required placeholder="nome">
                     </div>
                     <div class="textfield">
                         <label for="senha">Senha</label>
-                        <input type="password" name="senha" required="required" placeholder="Senha">
+                        <input type="password" name="senha" required placeholder="Senha">
                     </div>
                     <button class="btn-login">ENTRAR</button>
-                    <div th:if="${erro != null}" th:text="${erro}" class="alert alert-danger" role="alert"></div>
+                    <div th:if="${not #strings.isEmpty(msg)}" class="alert alert-danger" role="alert"><span th:text="${msg}"></span></div>
                 </div>
             </div>
         </form>
