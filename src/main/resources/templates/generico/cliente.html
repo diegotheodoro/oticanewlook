@@ -5,6 +5,48 @@
       <i class='bx bx-menu' ></i>
       <span class="text">Cadastro de clientes</span>
     </div>
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Clientes</h1>
+    <p class="mb-4">
+        Aqui ira listar os Clientes do meu sistema.
+        </a>.</p>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <a href="/funcionarios/novo" class="btn btn-primary" style="margin-right: 20px;">Novo</a>
+            <h6 class="m-0 font-weight-bold text-primary" style="display: inline-block;">Lista de Clientes</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NOME</th>
+                            <th>EMAIL</th>
+                            <th>SENHA</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="funcionario : ${funcionarios}">
+                            <th th:text="${funcionario.id_func}"></th>
+                            <th th:text="${funcionario.nome}"></th>
+                            <th th:text="${funcionario.email}"></th>
+                            <th th:text="${funcionario.senha}"></th>
+                            <th><a href="#" class="btn btn-warning">Alterar</th>
+                            <th><a href="#" th:onclick="'if(confirm(\'Confirma?\')) {window.location.href = \'' + @{/administradores/{id_func}(id_func=${funcionario.id_func})} + '/excluir\'}'" class="btn btn-danger">Exluir</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
   </section>
 
 <div th:replace="compartilhado/footer"></div>
