@@ -1,5 +1,4 @@
 package br.com.oticanewlook.oticanewlook.controller;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,10 +6,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import br.com.oticanewlook.oticanewlook.model.Cliente;
 import br.com.oticanewlook.oticanewlook.repository.ClienteRepository;
-
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping
 public class ClienteController {
@@ -31,5 +31,10 @@ public class ClienteController {
     public String novo() {
 
         return "cadastros/novoClie";
+    }
+
+    @GetMapping("/cliente")
+    public String cliente(){
+        return "generico/cliente";
     }
 }

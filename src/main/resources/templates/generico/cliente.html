@@ -5,42 +5,6 @@
       <i class='bx bx-menu' ></i>
       <span class="text">Cadastro de clientes</span>
     </div>
-
-    <p class="mb-4">
-        </a>.</p>
-
-    <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <a href="/clientes/novo" class="btn btn-primary" style="margin-right: 20px;">Novo</a>
-            <h6 class="m-0 font-weight-bold text-primary" style="display: inline-block;">Lista de Clientes</h6>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>NOME</th>
-                            <th>ENDERECO</th>
-                            <th>CPF</th>
-                            <th>TELEFONE</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="cliente : ${clientes}">
-                            <th th:text="${cliente.nome}"></th>
-                            <th th:text="${cliente.endereco}"></th>
-                            <th th:text="${cliente.cpf}"></th>
-                            <th><a href="#" class="btn btn-warning">Alterar</th>
-                            <th><a href="#" th:onclick="'if(confirm(\'Confirma?\')) {window.location.href = \'' + @{/clientes/{id_cliente}(id_func=${cliente.id_cliente})} + '/excluir\'}'" class="btn btn-danger">Exluir</th>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
   </section>
 
 <div th:replace="compartilhado/footer"></div>
