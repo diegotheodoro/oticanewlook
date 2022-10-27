@@ -1,0 +1,97 @@
+<div th:replace="compartilhado/header">...</div>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="css/cadastro.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<section class="home-section">
+    <div class="home-content">
+        <i class='bx bx-menu'></i>
+        <span class="text">Cadastro de Funcionários</span>
+    </div>
+
+    <form class="form-horizontal" method="POST"
+        th:action="@{'/funcionarios/' + ${funcionario?.id_func} + '/atualizar'}">
+        <fieldset>
+            <div class="panel panel-primary">
+
+
+                <div class="panel-body">
+                    <div class="form-group">
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="id_func">Código ID: </label>
+                        <div class="col-md-2">
+                            <input th:value="${funcionario.id_func}" required id="id_func" name="id_func"
+                                readonly="readonly" type="text">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="nome">Nome <h11>*</h11></label>
+                        <div class="col-md-7">
+                            <input th:value="${funcionario?.nome}" id="nome" name="nome" placeholder=""
+                                class="form-control input-md" required="" type="text">
+                        </div>
+                    </div>
+
+                    <!-- Prepended text-->
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="tel">Telefone Fixo <h11>*</h11></label>
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                <input th:value="${funcionario?.tel}" id="tel" name="tel" class="form-control"
+                                    placeholder="(XX) XXXX-XXXX" required="" type="text" maxlength="12"
+                                    pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$"
+                                    OnKeyPress="formatar('## ####-####', this)">
+                            </div>
+                        </div>
+
+                        <label class="col-md-1 control-label" for="cel">Celular</label>
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                <input th:value="${funcionario?.cel}" required id="cel" name="cel" class="form-control"
+                                    placeholder="(XX) XXXXX-XXXX" type="text" maxlength="13"
+                                    pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$"
+                                    OnKeyPress="formatar('## #####-####', this)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Prepended text-->
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="email">Email <h11>*</h11></label>
+                        <div class="col-md-5">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                <input th:value="${funcionario?.email}" id="email" name="email" class="form-control"
+                                    placeholder="email@email.com" required="" type="text"
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button (Double) -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="Salvar"></label>
+                <div class="col-md-8">
+                    <button class="btn btn-success" type="Submit">Salvar</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    <script src="js/cadastro.js"></script>
+</section>
+
+<div th:replace="compartilhado/footer"></div>

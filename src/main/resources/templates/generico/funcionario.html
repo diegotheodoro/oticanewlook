@@ -38,8 +38,8 @@
                             <th th:text="${funcionario.nome}"></th>
                             <th th:text="${funcionario.email}"></th>
                             <th th:text="${funcionario.senha}"></th>
-                            <th><a href="#" class="btn btn-warning">Alterar</th>
-                            <th><a href="#" th:onclick="'if(confirm(\'Confirma?\')) {window.location.href = \'' + @{/administradores/{id_func}(id_func=${funcionario.id_func})} + '/excluir\'}'" class="btn btn-danger">Exluir</th>
+                            <th><a th:href="@{'/funcionarios/' + ${funcionario.id_func}}" class="btn btn-warning">Alterar</th>
+                            <th><a href="#" th:onclick="'if(confirm(\'Confirma?\')) {window.location.href = \'' + @{/funcionarios/{id_func}(id_func=${funcionario.id_func})} + '/excluir\'}'" class="btn btn-danger">Exluir</th>
                         </tr>
                     </tbody>
                 </table>

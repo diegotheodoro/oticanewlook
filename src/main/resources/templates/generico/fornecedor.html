@@ -1,11 +1,46 @@
 <div th:replace="compartilhado/header">...</div>
 
-  <section class="home-section">
-    <div class="home-content">
-      <i class='bx bx-menu' ></i>
-      <span class="text">Cadastro de fornecedores</span>
+<section class="home-section">
+  <div class="home-content">
+    <i class='bx bx-menu'></i>
+    <span class="text">Cadastro de fornecedores</span>
+  </div>
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <a href="/fornecedores/novo" class="btn btn-primary" style="margin-right: 20px;">Novo</a>
+      <h6 class="m-0 font-weight-bold text-primary" style="display: inline-block;">Lista de Fornecedores</h6>
     </div>
-  </section>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>NOME</th>
+              <th>TELEFONE</th>
+              <th>CNPJ</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="fornecedor : ${fornecedores}">
+              <th th:text="${fornecedor.nome}"></th>
+              <th th:text="${fornecedor.tel}"></th>
+              <th th:text="${fornecedor.cnpj}"></th>
+              <th><a href="#" class="btn btn-warning">Alterar</th>
+              <th><a href="#"
+                  th:onclick="'if(confirm(\'Confirma?\')) {window.location.href = \'' + @{/funcionarios/{id_forne}(id_forne=${fornecedor.id_forne})} + '/excluir\'}'"
+                  class="btn btn-danger">Exluir</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+
+</section>
 
 <div th:replace="compartilhado/footer"></div>
-

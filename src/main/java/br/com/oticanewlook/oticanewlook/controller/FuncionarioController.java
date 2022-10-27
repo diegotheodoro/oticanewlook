@@ -2,6 +2,7 @@ package br.com.oticanewlook.oticanewlook.controller;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -14,7 +15,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
 import br.com.oticanewlook.oticanewlook.model.Funcionario;
 import br.com.oticanewlook.oticanewlook.repository.FuncionarioRepository;
 
@@ -23,16 +23,18 @@ import br.com.oticanewlook.oticanewlook.repository.FuncionarioRepository;
 public class FuncionarioController {
     
     @Autowired
-    private FuncionarioRepository repo;
+    private FuncionarioRepository repoFunc;
 
+    //TELA PRINCIPAL
     @GetMapping("/funcionarios")
     public String funcionarios(Model model) {
-        List<Funcionario> funcionarios = (List<Funcionario>) repo.findAll();
+        List<Funcionario> funcionarios = (List<Funcionario>) repoFunc.findAll();
         model.addAttribute("funcionarios", funcionarios);
 
         return "generico/funcionario";
     }
 
+    //PROCESSO NOVO FUNCIONÁRIO
     @GetMapping("/funcionarios/novo")
     public String novo() {
 
@@ -44,18 +46,43 @@ public class FuncionarioController {
 
         if (br.hasErrors()) {
             ModelAndView modelView = new ModelAndView("/funcionarios/novo");
-            Iterable<Funcionario> funcionarios = repo.findAll();
+            Iterable<Funcionario> funcionarios = repoFunc.findAll();
             modelView.addObject("funcionarios", funcionarios);
         }
 
-        repo.save(funcionario);
+        repoFunc.save(funcionario);
         return "redirect:/funcionarios";
     }
+
+    //PROCESSO ALTERAÇÃO DE FUNCIONÁRIO
+    @GetMapping("/funcionarios/{id_func}")
+    public String buscar(@PathVariable int id_func, Model model) {
+        Optional<Funcionario> funcionario = repoFunc.findById(id_func);
+
+        try {
+            model.addAttribute("funcionario", funcionario.get());
+        } catch (Exception e) {
+            return "/Editar/editarFunc";
+        }
+        return "/Editar/editarFunc";
+    }
     
-    @GetMapping("/funcionarios/{id}/excluir")
-    public String excluir(@PathVariable int id){
+    @PostMapping("/funcionarios/{id_func}/atualizar")
+    public String atualizar(@PathVariable int id_func, Funcionario funcionario) {
+
+        if (!repoFunc.existsById(id_func)) {
+            return "redirect:/funcionarios";
+        }
         
-        repo.deleteById(id);;
+        repoFunc.findById(id_func);
+        return "redirect:/funcionarios";
+    }
+
+    //PROCESSO EXCLUIR FUNCIONARIO
+    @GetMapping("/funcionarios/{id_func}/excluir")
+    public String excluir(@PathVariable int id_func){
+        
+        repoFunc.deleteById(id_func);;
         return "redirect:/funcionarios";
     }
 }
