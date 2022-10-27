@@ -1,54 +1,53 @@
 <div th:replace="compartilhado/header">...</div>
-
-
-  <section class="home-section">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,200;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/crud1.css">
+    <script src="js/crud1.js" defer></script>
+<section class="home-section">
     <div class="home-content">
-        <i class='bx bx-menu' ></i>
-      <span class="text">Cadastro de funcionáriosa</span>
+        <i class='bx bx-menu'></i>
+        <span class="text">Cadastro de funcionários</span>
     </div>
 
-    <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Funcionários</h1>
-    <p class="mb-4">
-        Aqui ira listar os Funcionários do meu sistema.
-        </a>.</p>
-
-    <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <a href="/funcionarios/novo" class="btn btn-primary" style="margin-right: 20px;">Novo</a>
-            <h6 class="m-0 font-weight-bold text-primary" style="display: inline-block;">Lista de Funcionários</h6>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>NOME</th>
-                            <th>EMAIL</th>
-                            <th>SENHA</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="funcionario : ${funcionarios}">
-                            <th th:text="${funcionario.id_func}"></th>
-                            <th th:text="${funcionario.nome}"></th>
-                            <th th:text="${funcionario.email}"></th>
-                            <th th:text="${funcionario.senha}"></th>
-                            <th><a th:href="@{'/funcionarios/' + ${funcionario.id_func}}" class="btn btn-warning">Alterar</th>
-                            <th><a href="#" th:onclick="'if(confirm(\'Confirma?\')) {window.location.href = \'' + @{/funcionarios/{id_func}(id_func=${funcionario.id_func})} + '/excluir\'}'" class="btn btn-danger">Exluir</th>
-                        </tr>
-                    </tbody>
-                </table>
+    <body>
+    
+    <main>
+        <a href="/funcionarios/novo"><button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Funcionário</button></a>
+        <table class="records">
+            <thead>
+                <tr>
+                  <th>NOME</th>
+                  <th>EMAIL</th>
+                  <th>TELEFONE</th>
+                  <th>EDEREÇO</th>
+                  <th>AÇÃO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="funcionario: ${funcionarios}">
+                    <td th:text="${funcionario.nome}"></td>
+                    <td th:text="${funcionario.email}"></td>
+                    <td th:text="${funcionario.tel}"></td>
+                    <td th:text="${funcionario.endereco}"></td>
+                    
+                    <td>
+                        <button type="button" class="button green">editar</button>
+                        <button type="button" class="button red">excluir</button>
+                    </td>
+                </tr>
+                
+                
+            </tbody>
+        </table>
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                
             </div>
         </div>
-    </div>
+    </main>
+</body>
 
 
-  </section>
+</section>
 
 <div th:replace="compartilhado/footer"></div>
-

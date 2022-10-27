@@ -9,50 +9,32 @@
         <span class="text">Cadastro de clientes</span>
     </div>
 
-    body>
+    <body>
     
     <main>
-        <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Cliente</button>
+        <a href="/clientes/novo"><button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Cliente</button></a>
         <table class="records">
             <thead>
                 <tr>
-                    <th>Nome</th>
-                    <th>E-mail</th>
-                    <th>CPF</th>
-                    <th>Ação</th>
+                  <th>NOME</th>
+                  <th>ENDERECO</th>
+                  <th>TEL</th>
+                  <th>AÇÃO</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Maria</td>
-                    <td>maria@gmail.com</td>
-                    <td>(11) 97165-1111</td>
+                <tr th:each="cliente: ${clientes}">
+                    <td th:text="${cliente.nome}"></td>
+                    <td th:text="${cliente.endereco}"></td>
+                    <td th:text="${cliente.tel}"></td>
                     
                     <td>
                         <button type="button" class="button green">editar</button>
                         <button type="button" class="button red">excluir</button>
                     </td>
                 </tr>
-                <tr>
-                    <td>João Pedro</td>
-                    <td>joao@gmail.com</td>
-                    <td>(11) 97165-2222</td>
-                    
-                    <td>
-                        <button type="button" class="button green">editar</button>
-                        <button type="button" class="button red">excluir</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Jose da Silva</td>
-                    <td>jose@gmail.com</td>
-                    <td>(11) 97165-3333</td>
-                    
-                    <td>
-                        <button type="button" class="button green">editar</button>
-                        <button type="button" class="button red">excluir</button>
-                    </td>
-                </tr>
+                
+                
             </tbody>
         </table>
         <div class="modal" id="modal">
