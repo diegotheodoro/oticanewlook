@@ -53,15 +53,8 @@
         <input id="cpf" name="cpf" placeholder="Apenas números" class="form-control input-md" required="" type="text" maxlength="14" pattern="[0-14]+$"
         OnKeyPress="formatar('###.###.###-##', this)">
         </div>
-        
-        <label class="col-md-1 control-label" for="Nome">Nascimento<h11>*</h11></label>  
-        <div class="col-md-2">
-        <input id="dtnasc" name="dtnasc" placeholder="DD/MM/AAAA" class="form-control input-md" required="" type="text" maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
-      </div>
       
-      <!-- Multiple Radios (inline) -->
       
-        
       </div>
       
       <!-- Prepended text-->
@@ -70,8 +63,8 @@
         <div class="col-md-2">
           <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-            <input id="prependedtext" name="prependedtext" class="form-control" placeholder="(XX) XXXXX-XXXX" required="" type="text" maxlength="13" pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$"
-            OnKeyPress="formatar('## #####-####', this)">
+            <input id="prependedtext" name="prependedtext" class="form-control" placeholder="(XX) XXXX-XXXX" required="" type="text" maxlength="12" pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$"
+            OnKeyPress="formatar('## ####-####', this)">
           </div>
         </div>
         
@@ -115,7 +108,7 @@
         <div class="col-md-4">
           <div class="input-group">
             <span class="input-group-addon">Rua</span>
-            <input id="rua" name="rua" class="form-control" placeholder="" required="" readonly="readonly" type="text">
+            <input id="rua" name="rua" class="form-control" placeholder="" required="" type="text">
           </div>
           
         </div>
@@ -130,7 +123,7 @@
         <div class="col-md-3">
           <div class="input-group">
             <span class="input-group-addon">Bairro</span>
-            <input id="bairro" name="bairro" class="form-control" placeholder="" required="" readonly="readonly" type="text">
+            <input id="bairro" name="bairro" class="form-control" placeholder="" required="" type="text">
           </div>
           
         </div>
@@ -141,7 +134,7 @@
         <div class="col-md-4">
           <div class="input-group">
             <span class="input-group-addon">Cidade</span>
-            <input id="cidade" name="cidade" class="form-control" placeholder="" required=""  readonly="readonly" type="text">
+            <input id="cidade" name="cidade" class="form-control" placeholder="" required=""  type="text">
           </div>
           
         </div>
@@ -149,7 +142,7 @@
          <div class="col-md-2">
           <div class="input-group">
             <span class="input-group-addon">Estado</span>
-            <input id="estado" name="estado" class="form-control" placeholder="" required=""  readonly="readonly" type="text">
+            <input id="estado" name="estado" class="form-control" placeholder="" required=""  type="text">
           </div>
           
         </div>
