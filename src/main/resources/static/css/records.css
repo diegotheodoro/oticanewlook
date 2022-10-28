@@ -6,9 +6,11 @@
 
 .records th{
     height: 50px;
-    background-color: var(--primary-color);
+    background-color: black;
     padding-left: 20px;
-    font-size: 1.2rem;    
+    font-size: 1.2rem;
+    color: #EAB317;
+    text-align: center;    
 }
 .records td{
     height: 50px;

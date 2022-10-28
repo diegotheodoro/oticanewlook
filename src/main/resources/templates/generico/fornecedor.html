@@ -1,32 +1,35 @@
 <div th:replace="compartilhado/header">...</div>
-<link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,200;1,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/crud1.css">
-    <script src="js/crud1.js" defer></script>
 <section class="home-section">
     <div class="home-content">
-        <i class='bx bx-menu'></i>
-        <span class="text">Cadastro de fornecedores</span>
+      <i class='bx bx-menu' ></i>
+      <span class="text">Cadastro de Fornecedor</span>
     </div>
-
-    <body>
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,200;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/records.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <script src="js/main.js" defer></script>
+    <title>CRUD</title>
+</head>
+<body>
     <main>
-        <a href="/fornecedores/novo"><button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Fornecedor</button></a>
+        <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Fornecedor</button>
         <table class="records">
             <thead>
                 <tr>
                   <th>NOME</th>
-                  <th>TELEFONE</th>
-                  <th>CNPJ</th>
+                  <th>ENDERECO</th>
+                  <th>TEL</th>
                   <th>AÇÃO</th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="fornecedor: ${fornecedores}">
-                    <td th:text="${fornecedor.nome}"></td>
-                    <td th:text="${fornecedor.tel}"></td>
-                    <td th:text="${fornecedor.cnpj}"></td>
+                <tr th:each="cliente: ${clientes}">
+                    <td th:text="${cliente.nome}"></td>
+                    <td th:text="${cliente.endereco}"></td>
+                    <td th:text="${cliente.tel}"></td>
                     
                     <td>
                         <button type="button" class="button green">editar</button>
@@ -39,13 +42,26 @@
         </table>
         <div class="modal" id="modal">
             <div class="modal-content">
-                
+                <header class="modal-header">
+                    <h2>Novo Fornecedor</h2>
+                    <span class="modal-close" id="modalClose">&#10006;</span>
+                </header>
+                <form class="modal-form">
+                    <input type="text" class="modal-field" placeholder="Nome do Fornecedor">
+                    <input type="text" class="modal-field" placeholder="Telefone do Fornecedor">
+                    <input type="text" class="modal-field" placeholder="Celular do Fornecedor">
+                    <input type="text" class="modal-field" placeholder="CNPJ do Fornecedor">
+                    <input type="email" class="modal-field" placeholder="Cidade do Fornecedor">
+                </form>
+                <footer class="modal-footer">
+                    <button class="button green">Salvar</button>
+                    <button class="button blue">Cancelar</button>
+                </footer>
             </div>
         </div>
     </main>
 </body>
-
+</html>
 
 </section>
-
 <div th:replace="compartilhado/footer"></div>

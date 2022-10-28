@@ -1,34 +1,35 @@
 <div th:replace="compartilhado/header">...</div>
-<link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,200;1,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/crud1.css">
-    <script src="js/crud1.js" defer></script>
 <section class="home-section">
     <div class="home-content">
-        <i class='bx bx-menu'></i>
-        <span class="text">Cadastro de funcionários</span>
+      <i class='bx bx-menu' ></i>
+      <span class="text">Cadastro de Funcionário</span>
     </div>
-
-    <body>
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,200;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/records.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <script src="js/main.js" defer></script>
+    <title>CRUD</title>
+</head>
+<body>
     <main>
-        <a href="/funcionarios/novo"><button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Funcionário</button></a>
+        <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Funcionário</button>
         <table class="records">
             <thead>
                 <tr>
                   <th>NOME</th>
-                  <th>EMAIL</th>
-                  <th>TELEFONE</th>
-                  <th>EDEREÇO</th>
+                  <th>ENDERECO</th>
+                  <th>TEL</th>
                   <th>AÇÃO</th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="funcionario: ${funcionarios}">
-                    <td th:text="${funcionario.nome}"></td>
-                    <td th:text="${funcionario.email}"></td>
-                    <td th:text="${funcionario.tel}"></td>
-                    <td th:text="${funcionario.endereco}"></td>
+                <tr th:each="cliente: ${clientes}">
+                    <td th:text="${cliente.nome}"></td>
+                    <td th:text="${cliente.endereco}"></td>
+                    <td th:text="${cliente.tel}"></td>
                     
                     <td>
                         <button type="button" class="button green">editar</button>
@@ -41,13 +42,28 @@
         </table>
         <div class="modal" id="modal">
             <div class="modal-content">
-                
+                <header class="modal-header">
+                    <h2>Novo Funcionário</h2>
+                    <span class="modal-close" id="modalClose">&#10006;</span>
+                </header>
+                <form class="modal-form">
+                    <input type="text" class="modal-field" placeholder="Nome do Funcionário">
+                    <input type="email" class="modal-field" placeholder="CPF do Funcionário">
+                    <input type="email" class="modal-field" placeholder="E-mail do Funcionário">
+                    <input type="text" class="modal-field" placeholder="Telefone do Funcionário">
+                    <input type="text" class="modal-field" placeholder="Celular do Funcionário">
+                    <input type="text" class="modal-field" placeholder="Endereço do Funcionário">
+                    <input type="email" class="modal-field" placeholder="Cidade do Funcionário">
+                </form>
+                <footer class="modal-footer">
+                    <button class="button green">Salvar</button>
+                    <button class="button blue">Cancelar</button>
+                </footer>
             </div>
         </div>
     </main>
 </body>
-
+</html>
 
 </section>
-
 <div th:replace="compartilhado/footer"></div>

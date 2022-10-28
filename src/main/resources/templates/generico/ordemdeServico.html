@@ -1,11 +1,68 @@
 <div th:replace="compartilhado/header">...</div>
-
-  <section class="home-section">
+<section class="home-section">
     <div class="home-content">
       <i class='bx bx-menu' ></i>
-      <span class="text">Cadastro de O.S</span>
+      <span class="text">Cadastro Ordem de Serviço</span>
     </div>
-  </section>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,200;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/records.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <script src="js/main.js" defer></script>
+    <title>CRUD</title>
+</head>
+<body>
+    <main>
+        <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Ordem de Serviço</button>
+        <table class="records">
+            <thead>
+                <tr>
+                  <th>NOME</th>
+                  <th>ENDERECO</th>
+                  <th>TEL</th>
+                  <th>AÇÃO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="cliente: ${clientes}">
+                    <td th:text="${cliente.nome}"></td>
+                    <td th:text="${cliente.endereco}"></td>
+                    <td th:text="${cliente.tel}"></td>
+                    
+                    <td>
+                        <button type="button" class="button green">editar</button>
+                        <button type="button" class="button red">excluir</button>
+                    </td>
+                </tr>
+                
+                
+            </tbody>
+        </table>
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h2>Nova Ordem de Serviço</h2>
+                    <span class="modal-close" id="modalClose">&#10006;</span>
+                </header>
+                <form class="modal-form">
+                    <input type="text" class="modal-field" placeholder="Nome do Cliente">
+                    <input type="email" class="modal-field" placeholder="CPF do Cliente">
+                    <input type="text" class="modal-field" placeholder="Telefone do Cliente">
+                    <input type="text" class="modal-field" placeholder="Celular do Cliente">
+                    <input type="text" class="modal-field" placeholder="Endereço do Cliente">
+                    <input type="email" class="modal-field" placeholder="Cidade do Cliente">
+                </form>
+                <footer class="modal-footer">
+                    <button class="button green">Salvar</button>
+                    <button class="button blue">Cancelar</button>
+                </footer>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
 
+</section>
 <div th:replace="compartilhado/footer"></div>
-
