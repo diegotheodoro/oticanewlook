@@ -15,8 +15,14 @@
 </head>
 <body>
     <main>
+        <form class="modal-form">
         <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Cliente</button>
+        <div class="form-group">
+            <input type="text" class="modal-field" placeholder="">
+            <button type="button" class="button cyan">Pesquisar</button>
+        </div>
         <table class="records">
+        </form>
             <thead>
                 <tr>
                   <th>NOME</th>
@@ -32,7 +38,7 @@
                     <td th:text="${cliente.tel}"></td>
                     
                     <td>
-                        <button type="button" class="button green">editar</button>
+                        <a href="editarClie.html"><button type="button" class="button green" id="editarCliente">editar</button></a>
                         <button type="button" class="button red">excluir</button>
                     </td>
                 </tr>

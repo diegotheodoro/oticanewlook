@@ -21,6 +21,9 @@ button.red{
     background-color: #FF4949;
 }
 
+button.cyan{
+    background-color: #17a2b8;
+}
 .button:hover{
     box-shadow: inset 200px 0 0 #00000055;
 }

@@ -1,28 +1,36 @@
 <div th:replace="compartilhado/header">...</div>
 <section class="home-section">
     <div class="home-content">
-      <i class='bx bx-menu' ></i>
-      <span class="text">Cadastro de Fornecedor</span>
+        <i class='bx bx-menu'></i>
+        <span class="text">Cadastro de Fornecedor</span>
     </div>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,200;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,200;1,800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/button.css">
     <link rel="stylesheet" href="css/records.css">
     <link rel="stylesheet" href="css/modal.css">
     <script src="js/main.js" defer></script>
     <title>CRUD</title>
-</head>
-<body>
-    <main>
-        <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Fornecedor</button>
-        <table class="records">
+    </head>
+
+    <body>
+        <main>
+            <form class="modal-form">
+                <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Fornecedor</button>
+                <div class="form-group">
+                    <input type="text" class="modal-field" placeholder="">
+                    <button type="button" class="button cyan">Pesquisar</button>
+                </div>
+                <table class="records">
+            </form>
             <thead>
                 <tr>
-                  <th>NOME</th>
-                  <th>ENDERECO</th>
-                  <th>TEL</th>
-                  <th>AÇÃO</th>
+                    <th>NOME</th>
+                    <th>ENDERECO</th>
+                    <th>TEL</th>
+                    <th>AÇÃO</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,38 +38,39 @@
                     <td th:text="${cliente.nome}"></td>
                     <td th:text="${cliente.endereco}"></td>
                     <td th:text="${cliente.tel}"></td>
-                    
+
                     <td>
                         <button type="button" class="button green">editar</button>
                         <button type="button" class="button red">excluir</button>
                     </td>
                 </tr>
-                
-                
+
+
             </tbody>
-        </table>
-        <div class="modal" id="modal">
-            <div class="modal-content">
-                <header class="modal-header">
-                    <h2>Novo Fornecedor</h2>
-                    <span class="modal-close" id="modalClose">&#10006;</span>
-                </header>
-                <form class="modal-form">
-                    <input type="text" class="modal-field" placeholder="Nome do Fornecedor">
-                    <input type="text" class="modal-field" placeholder="Telefone do Fornecedor">
-                    <input type="text" class="modal-field" placeholder="Celular do Fornecedor">
-                    <input type="text" class="modal-field" placeholder="CNPJ do Fornecedor">
-                    <input type="email" class="modal-field" placeholder="Cidade do Fornecedor">
-                </form>
-                <footer class="modal-footer">
-                    <button class="button green">Salvar</button>
-                    <button class="button blue">Cancelar</button>
-                </footer>
+            </table>
+            <div class="modal" id="modal">
+                <div class="modal-content">
+                    <header class="modal-header">
+                        <h2>Novo Fornecedor</h2>
+                        <span class="modal-close" id="modalClose">&#10006;</span>
+                    </header>
+                    <form class="modal-form">
+                        <input type="text" class="modal-field" placeholder="Nome do Fornecedor">
+                        <input type="text" class="modal-field" placeholder="Telefone do Fornecedor">
+                        <input type="text" class="modal-field" placeholder="Celular do Fornecedor">
+                        <input type="text" class="modal-field" placeholder="CNPJ do Fornecedor">
+                        <input type="email" class="modal-field" placeholder="Cidade do Fornecedor">
+                    </form>
+                    <footer class="modal-footer">
+                        <button class="button green">Salvar</button>
+                        <button class="button blue">Cancelar</button>
+                    </footer>
+                </div>
             </div>
-        </div>
-    </main>
-</body>
-</html>
+        </main>
+    </body>
+
+    </html>
 
 </section>
 <div th:replace="compartilhado/footer"></div>
