@@ -3,9 +3,7 @@ package br.com.oticanewlook.oticanewlook.controller;
 
 import java.util.List;
 import java.util.Optional;
-
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,12 +33,6 @@ public class FuncionarioController {
     }
 
     //PROCESSO NOVO FUNCIONÁRIO
-    @GetMapping("/funcionarios/novo")
-    public String novo() {
-
-        return "cadastros/novoFunc";
-    }
-    
     @PostMapping("/funcionarios/criar")
     public String criar(@Valid Funcionario funcionario, BindingResult br) {
 
@@ -62,9 +54,9 @@ public class FuncionarioController {
         try {
             model.addAttribute("funcionario", funcionario.get());
         } catch (Exception e) {
-            return "/Editar/editarFunc";
+            return "generico/funcionario";
         }
-        return "/Editar/editarFunc";
+        return "generico/funcionario";
     }
     
     @PostMapping("/funcionarios/{id_func}/atualizar")

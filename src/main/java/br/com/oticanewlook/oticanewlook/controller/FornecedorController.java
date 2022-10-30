@@ -19,16 +19,10 @@ public class FornecedorController {
 
      //TELA PRINCIPAL
      @GetMapping("/fornecedores")
-     public String cliente(Model model) {
+     public String fornecedor(Model model) {
          List<Fornecedor> fornecedores = (List<Fornecedor>) repoFornecedor.findAll();
          model.addAttribute("fornecedores", fornecedores);
          return "generico/fornecedor";
      }
      
-     //PROCESSO NOVO FORNECEDOR
-    @GetMapping("/fornecedores/novo")
-    public String novo() {
-
-        return "cadastros/novoForn";
-    }
 }
